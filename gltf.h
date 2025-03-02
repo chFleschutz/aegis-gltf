@@ -198,7 +198,6 @@ namespace Aegix::GLTF
 		{
 			Opaque,
 			Mask,
-			AlphaCutoff,
 			Blend
 		};
 

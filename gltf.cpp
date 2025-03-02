@@ -235,6 +235,16 @@ namespace Aegix::GLTF
 		return Accessor::Type{};
 	}
 
+	static Material::AlphaMode parseAlphaMode(const std::string& alphaModeString)
+	{
+		if (alphaModeString == "OPAQUE") return Material::AlphaMode::Opaque;
+		if (alphaModeString == "MASK") return Material::AlphaMode::Mask;
+		if (alphaModeString == "BLEND") return Material::AlphaMode::Blend;
+
+		assert(false && "Invalid alpha mode");
+		return Material::AlphaMode{};
+	}
+
 	///////////////////////////////////////////////////////////////////////////////////////////
 
 	static bool readAsset(Asset& asset, const nlohmann::json& json)
@@ -547,7 +557,7 @@ namespace Aegix::GLTF
 
 			tryReadOptional<std::string>(jsonMaterial, "name", material.name);
 			tryReadArray<float, 3>(jsonMaterial, "emissiveFactor", material.emissiveFactor);
-			tryReadType<int>(jsonMaterial, "alphaMode", material.alphaMode);
+			tryReadParse<std::string, Material::AlphaMode>(jsonMaterial, "alphaMode", material.alphaMode, parseAlphaMode);
 			tryRead(jsonMaterial, "alphaCutoff", material.alphaCutoff);
 			tryRead(jsonMaterial, "doubleSided", material.doubleSided);
 		}

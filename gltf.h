@@ -284,6 +284,7 @@ namespace Aegix::GLTF
 		std::vector<Texture> textures;
 		std::vector<Image> images;
 		std::vector<Sampler> samplers;
+		std::filesystem::path basePath;
 	};
 
 

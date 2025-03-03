@@ -643,6 +643,7 @@ namespace Aegix::GLTF
 	static std::optional<GLTF> loadGLTF(const nlohmann::json& header, const std::filesystem::path& parentDir)
 	{
 		GLTF gltf{};
+		gltf.basePath = parentDir;
 
 		// Read GLTF header data
 		if (!readAsset(gltf.asset, header) ||

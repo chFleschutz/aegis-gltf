@@ -8,7 +8,7 @@
 #include <variant>
 #include <vector>
 
-namespace Aegix::GLTF
+namespace Aegis::GLTF
 {
 	using Vec3 = std::array<float, 3>;
 	using Vec4 = std::array<float, 4>;
@@ -198,6 +198,7 @@ namespace Aegix::GLTF
 		{
 			Opaque,
 			Mask,
+			AlphaCutoff,
 			Blend
 		};
 

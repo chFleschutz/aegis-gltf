@@ -4,7 +4,7 @@
 int main()
 {
 	std::filesystem::path gltfFilePath = PROJECT_DIR "/helmet/DamagedHelmet.glb";
-	auto gltf = Aegix::GLTF::load(gltfFilePath);
+	auto gltf = Aegis::GLTF::load(gltfFilePath);
 	if (!gltf.has_value())
 	{
 		std::cerr << "Failed to load GLTF file: " << gltfFilePath << "\n";

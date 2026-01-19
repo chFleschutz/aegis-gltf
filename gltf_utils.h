@@ -5,7 +5,7 @@
 #include <vector>
 #include <cassert>
 
-namespace Aegix::GLTF
+namespace Aegis::GLTF
 {
 	/// @brief Reinterpret the binary sourceData as T and copy it to the destination vector
 	/// @tparam T Type to reinterpret the binary sourceData as

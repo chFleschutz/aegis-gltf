@@ -16,7 +16,7 @@
 		return false;                                   \
 	}
 
-namespace Aegix::GLTF
+namespace Aegis::GLTF
 {
 	namespace base64
 	{

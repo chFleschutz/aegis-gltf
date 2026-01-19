@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-namespace Aegix::GLTF
+namespace Aegis::GLTF
 {
 	inline std::ostream& operator<<(std::ostream& os, const Mesh::Primitive::Mode& mode)
 	{
@@ -168,7 +168,7 @@ namespace Aegix::GLTF
 		os << "\tChildren: \t" << node.children << "\n";
 		std::visit([&](auto&& arg) {
 			using T = std::decay_t<decltype(arg)>;
-			if constexpr (std::is_same_v<T, Aegix::GLTF::Mat4>)
+			if constexpr (std::is_same_v<T, Aegis::GLTF::Mat4>)
 			{
 				os << "\tTransform: \tMat4\n";
 				for (size_t iCol = 0; iCol < 4; ++iCol)
@@ -182,7 +182,7 @@ namespace Aegix::GLTF
 				}
 				os << "\n";
 			}
-			else if constexpr (std::is_same_v<T, Aegix::GLTF::Node::TRS>)
+			else if constexpr (std::is_same_v<T, Aegis::GLTF::Node::TRS>)
 			{
 				os << "\tTransform: \tTRS\n";
 				os << "\t\tTranslation: \t " << arg.translation << "\n";
@@ -310,11 +310,11 @@ namespace Aegix::GLTF
 		os << "\tName:       \t" << image.name << "\n";
 		std::visit([&](auto&& arg) {
 			using T = std::decay_t<decltype(arg)>;
-			if constexpr (std::is_same_v<T, Aegix::GLTF::Image::UriData>)
+			if constexpr (std::is_same_v<T, Aegis::GLTF::Image::UriData>)
 			{
 				os << "\tURI:        \t" << arg.uri << "\n";
 			}
-			else if constexpr (std::is_same_v<T, Aegix::GLTF::Image::BufferViewData>)
+			else if constexpr (std::is_same_v<T, Aegis::GLTF::Image::BufferViewData>)
 			{
 				os << "\tBufferView: \t" << arg.bufferView << "\n";
 				os << "\tMIME Type:  \t" << arg.mimeType << "\n";
